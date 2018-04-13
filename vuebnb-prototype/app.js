@@ -8,6 +8,19 @@ var app = new Vue({
   	'background-image':'url(sample/header.jpg)'
   		},
   amenities: sample.amenities,
-  prices: sample.prices
+  prices: sample.prices,
+  contracted: true,
+  modalOpen: false
+	},
+	watch:{
+		modalOpen: function() {
+			var className = 'modal-open';
+			if (this.modalOpen){
+				document.body.classList.add(className);
+			} else {
+				document.body.classList.remove(className);
+			}
+
+		}
 	}
 });
